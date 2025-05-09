@@ -1,0 +1,22 @@
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - 5173:5173
+  backend:
+    build: ./backend
+    ports:
+      - 3001:3001
+  postgres:
+    image: postgres:latest
+    container_name: postgres_container
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: postgres
+    ports:
+      - "5433:5432"
+    volumes:
+      - backend-bd: /var/lib/postgresql/data
+volumes:
+  backend-bd:
