@@ -1,6 +1,6 @@
 import { Router } from "express"
-import { validateUsers } from "../schema/usersSchema"
-import { AuthControlles } from "../controllers/auth"
+import { validateUsers } from "../schema/usersSchema.js"
+import { AuthControlles } from "../controllers/auth.js"
 
 export const createRouterAuth = () => {
   const authRouter = Router()
