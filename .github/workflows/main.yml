@@ -1,17 +1,17 @@
-name: Nombre del Workflow
+name: Despliegue con Docker Compose
 
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
-  construir:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout del código
+      uses: actions/checkout@v3
 
-    - name: Ejecutar un comando
-      run: echo "¡Hola, Mundo!"
+    - name: Configurar Docker Compose
+      run: |
+        docker-compose -f docker-compose.yml up -d
