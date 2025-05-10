@@ -7,6 +7,10 @@ services:
     build: ./backend
     ports:
       - 3001:3001
+    links:
+      - postgres
+    volumes:
+      - ./backend:/app
   postgres:
     image: postgres:latest
     container_name: postgres_container
@@ -17,6 +21,6 @@ services:
     ports:
       - "5433:5432"
     volumes:
-      - backend-bd: /var/lib/postgresql/data
+      - backend-bd:/var/lib/postgresql/data
 volumes:
   backend-bd:
