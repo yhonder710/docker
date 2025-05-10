@@ -14,4 +14,9 @@ export class ProductsControlles {
 
     res.status(201).json(newProduct)
   }
+
+  productTotal = async (req, res) => {
+    const results = await ProductModel.productTotal()
+    res.json(results)
+  }
 }

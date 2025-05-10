@@ -7,6 +7,7 @@ export const createProductsRouter = () => {
   const productsControlles = new ProductsControlles()
 
   productsRouter.get('/', productsControlles.getAll)
+  productsRouter.get('/total', productsControlles.productTotal)
   productsRouter.post('/create', productsControlles.create)
 
   return productsRouter

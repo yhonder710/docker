@@ -1,0 +1,17 @@
+name: Nombre del Workflow
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  construir:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Ejecutar un comando
+      run: echo "¡Hola, Mundo!"

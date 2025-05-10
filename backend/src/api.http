@@ -1,2 +1,14 @@
 ### ver datos
-GET http://localhost:3001/
+GET http://localhost:3001/products/total
+
+
+
+### para crear datos
+POST  http://localhost:3001/products/create
+Content-Type: application/json
+
+{
+  "id": 2,
+  "products": "teclado",
+  "price": 140
+}
